@@ -10,13 +10,13 @@ G = get_net(pkp)
 #G.nodes.data()
 G = G.to_undirected()
 
-print(len(G.edges.data('weight')))
+#print(len(G.edges.data('weight')))
 
 import community as community_louvain
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 partition = community_louvain.best_partition(G)
-print(partition.values())
+#print(partition.values())
 
 # draw the graph
 pos = nx.spring_layout(G)

@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 from lazypredict.Supervised import LazyClassifier, LazyRegressor
 
-z = '3X'
+z = '2X'
 dts = [f'Forum77data_{z}_train.csv']
 bts = [f'Forum77data_{z}_test.csv']
 
@@ -31,5 +31,5 @@ langs = models.index.tolist()
 students = models.loc[:,"F1 Score"].tolist()
 plt.bar(x = langs, height = students)
 plt.xticks(rotation = 45)
-plt.title('Performance of Different Classifiers', fontsize = 16, fontweight = 'bold')
+plt.title('Performance of Different Classifiers F77 2X', fontsize = 16, fontweight = 'bold')
 plt.show()

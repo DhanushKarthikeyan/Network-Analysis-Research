@@ -1,7 +1,5 @@
 
 
-
-
 import pandas as pd
 import networkx as nx
 from networks import make_net, save_net, show_net, get_net
@@ -18,7 +16,6 @@ G = G.to_undirected()
 partition = community_louvain.best_partition(G)
 counter = collections.Counter(partition.values())
 counter = collections.OrderedDict(sorted(counter.items()))
-
 
 def get_infected_comm(usrs):
     comms = []
@@ -67,9 +64,8 @@ def main():
     users = [3166,3167,3174,3168,3169,727,105,112577]
     #users = [3166,3167,3174,3168,3169,727]
     w = get_overlap_comm(users)
-    print(w)
-
     inf, communities  = get_infected_comm(users)
+    #print(f'total communities is {inf}')
     gn = gini_coefficient(np.array(communities))
     gn2 = gini(np.array(communities))
 
