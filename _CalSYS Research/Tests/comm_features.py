@@ -115,7 +115,14 @@ Overlap: between two succesive groups ... doubling?
 '''
 Community Features: community of adopters, community of frontier (neighbors of adopters) non-adopter before and after certain time (lambda)
 
-VnotM = adopters
-FnotL = frontiers
-FnotafterL = after lambda
+KV = number of communities of adopters
+KF = outgoing neighbors of adopters who are not adopters (frontiers) before lambda 3k minutes
+KFn = ^ after lambda
+
+-> Gini of Each
+-> Overlap between Each
+
+KV = len(communities)
+
+KF, KFn = G.neighbors(users) -> remove adopters -> divide into 2 using time -> 
 '''

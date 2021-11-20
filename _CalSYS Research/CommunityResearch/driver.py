@@ -4,12 +4,12 @@ import networkx as nx
 from networks import make_net, save_net, show_net, get_net
 from earlyadopters import get_early_adopters
 #from feature_extraction import get_features
-from get_comm_features import get_features
+from get_comm_features_v2 import get_features
 from balance import prepare
 
 #forums = [34,41,77,84] # identified topics
-mult = [2,3]
-alpha = 25
+mult = [10]
+alpha = 10
 for m in mult:
     forums = [77]#[34,41,77,84]
     for forum in forums:
