@@ -111,3 +111,11 @@ Gini Impurity: behaves similar to entropy for this set
 
 Overlap: between two succesive groups ... doubling?
 '''
+
+'''
+Community Features: community of adopters, community of frontier (neighbors of adopters) non-adopter before and after certain time (lambda)
+
+VnotM = adopters
+FnotL = frontiers
+FnotafterL = after lambda
+'''
