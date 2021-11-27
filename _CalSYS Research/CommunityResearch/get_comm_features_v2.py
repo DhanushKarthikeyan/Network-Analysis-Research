@@ -68,9 +68,9 @@ def get_features(threads, times, network):
     tmcsc = times['Pos']
     tmncsc = times['Neg']
 
-    print('Doing Positive Cases /n/n')
+    #print('Doing Positive Cases')
     for key, users in csc.items():
-        print(f'Doing Forum {key}')
+        #print(f'Doing Forum {key}')
 
         # find frontiers
         F, Fn = find_frontiers(users, tmcsc[key])
@@ -95,9 +95,9 @@ def get_features(threads, times, network):
 
         data.append([f'Topic{key}',KV,KF,KFn,GKV,GKF,GKFn,OKV_KF,OKV_KFn,OKF_KFn,avg,1])
 
-    print('Doing Negative Cases /n/n')
+    #print('Doing Negative Cases')
     for key, users in ncsc.items():
-        print(f'Doing Forum {key}')
+        #print(f'Doing Forum {key}')
 
         # find frontiers
         F, Fn = find_frontiers(users, tmncsc[key])
@@ -123,7 +123,7 @@ def get_features(threads, times, network):
         data.append([f'Topic{key}',KV,KF,KFn,GKV,GKF,GKFn,OKV_KF,OKV_KFn,OKF_KFn,avg,0])
 
     pdf = pd.DataFrame(data, columns=['Topic','KV','KF','KFn','GKV','GKF','GKFn','OKV_KF','OKV_KFn','OKF_KFn','elapsed','Class'])
-    pdf.fillna(0)
+    pdf.fillna(0, inplace=True)
     return pdf
 
 # alpha 2->10

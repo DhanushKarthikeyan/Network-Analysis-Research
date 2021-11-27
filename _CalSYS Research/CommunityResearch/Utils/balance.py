@@ -23,13 +23,13 @@ def prepare(pos, neg, tpos, tneg, split, case_id):
 
     # assume neg >> pos
     ratio = math.floor(len(neg) / len(pos))
-    print(f'ratio is {ratio}')
+    #print(f'ratio is {ratio}')
 
     cnt = math.floor(len(pos_threads)*split) # 80%
     cnt2 = len(pos_threads) - cnt
-    print(f'train count should be {cnt*2}')
-    print(f'test count should be {cnt2 + cnt2*ratio}')
-    print(f'{ratio*cnt2} for {cnt2}')
+    #print(f'train count should be {cnt*2}')
+    #print(f'test count should be {cnt2 + cnt2*ratio}')
+    #print(f'{ratio*cnt2} for {cnt2}')
 
     for i in range(len(pos_threads)):
         # Training Set

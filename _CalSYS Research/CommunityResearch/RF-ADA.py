@@ -12,7 +12,7 @@ import itertools
 #model = AdaBoostClassifier(random_state=50, base_estimator= rf_classifier, n_estimators=100, learning_rate= 0.001)
 from sklearn.ensemble import AdaBoostClassifier
 
-z = '10X'
+'''z = '10X'
 dts = [f'Forum77data_{z}_train.csv']
 bts = [f'Forum77data_{z}_test.csv']
 
@@ -26,7 +26,7 @@ y_train = data.pop('Class') # Class
 X_train = data.drop('Topic',axis = 1)
 
 y_test = test.pop('Class') # Class
-X_test = test.drop('Topic',axis = 1)
+X_test = test.drop('Topic',axis = 1)'''
 
 rf_classifier = RandomForestClassifier(
     # min_samples_leaf=30,
