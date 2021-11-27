@@ -1,4 +1,4 @@
-'''
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,12 +12,15 @@ import itertools
 #model = AdaBoostClassifier(random_state=50, base_estimator= rf_classifier, n_estimators=100, learning_rate= 0.001)
 from sklearn.ensemble import AdaBoostClassifier
 
-z = '2X'
+z = '3X'
 dts = [f'Forum77data_{z}_train.csv']
 bts = [f'Forum77data_{z}_test.csv']
 
 data = pd.read_csv(dts[0])
 test = pd.read_csv(bts[0])
+
+data.fillna(0)
+test.fillna(0)
 
 y_train = data.pop('Class') # Class
 X_train = data.drop('Topic',axis = 1)
@@ -55,5 +58,3 @@ print(f"The accuracy of the model is {round(accuracy,3)*100} %")
 print(f"The recall of the model is {round(recall,3)*100} %")
 print(f"The precision of the model is {round(precision,3)*100} %")
 print(f"The f1 is {round(f1_score(y_test, y_pred),3)}")
-
-'''

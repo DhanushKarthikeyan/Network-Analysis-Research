@@ -91,11 +91,11 @@ def get_features(threads, times, network):
         OKF_KFn = get_overlap(KF_comm, KFn_comm)
 
         # find average time
-        elapsed = get_avgtime(tmcsc[key])
+        avg = int(get_avgtime(tmcsc[key]))
 
-        data.append([f'Topic{key}',KV,KF,KFn,GKV,GKF,GKFn,OKV_KF,OKV_KFn,OKF_KFn,elapsed,1])
+        data.append([f'Topic{key}',KV,KF,KFn,GKV,GKF,GKFn,OKV_KF,OKV_KFn,OKF_KFn,avg,1])
 
-    print('Doing Negative Cases')
+    print('Doing Negative Cases /n/n')
     for key, users in ncsc.items():
         print(f'Doing Forum {key}')
 
@@ -118,10 +118,14 @@ def get_features(threads, times, network):
         OKF_KFn = get_overlap(KF_comm, KFn_comm)
 
         # find average time
-        elapsed = get_avgtime(tmncsc[key])
+        avg = int(get_avgtime(tmncsc[key]))
 
-        data.append([f'Topic{key}',KV,KF,KFn,GKV,GKF,GKFn,OKV_KF,OKV_KFn,OKF_KFn,elapsed,0])
+        data.append([f'Topic{key}',KV,KF,KFn,GKV,GKF,GKFn,OKV_KF,OKV_KFn,OKF_KFn,avg,0])
 
     pdf = pd.DataFrame(data, columns=['Topic','KV','KF','KFn','GKV','GKF','GKFn','OKV_KF','OKV_KFn','OKF_KFn','elapsed','Class'])
+    pdf.fillna(0)
     return pdf
 
+# alpha 2->10
+# feature ranking
+# compare ruicheng to my features
