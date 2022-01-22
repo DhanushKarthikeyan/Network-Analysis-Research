@@ -3,16 +3,20 @@ import pandas as pd
 import networkx as nx
 from Utils.networks import make_net, save_net, show_net, get_net
 from earlyadopters import get_early_adopters
-from get_comm_features_v2 import get_features
+from get_ruicheng_features import get_rc_features
+from get_original_features import get_og_features
+
 from Utils.balance import prepare
 from Utils.dataset_split import spltdataset
 from model_driver import train_models
 
 #forums = [34,41,77,84] # identified topics
-mult = [4,6,8,10]
+mult = [6]
 alpha = 10
-forums = [77]#[34,41,77,84]
+forums = [34]#[34,41,77,84]
 acc_avg, f1_avg = [], []
+
+research = ['original'] # 'ruicheng'
 
 for forum in forums:
     acc,f1 = [], []
@@ -28,12 +32,23 @@ for forum in forums:
             split = 0.8 # not over 1
             train_threads, train_times, test_threads, test_times = prepare(csc, ncsc, tcsc, tncsc, split, 2) # 1 = both balanced; 2 = train balanced, test imbalanced; 3 = both imbalanced
             
-            # Get features -> save as pdf
-            train_df = get_features(train_threads, train_times, get_net(pkp))
+            if research[0] == 'ruicheng':
+                # Get features -> save as pdf
+                train_df = get_rc_features(train_threads, train_times, get_net(pkp))
+                
+                # Get features -> save as pdf
+                test_df = get_rc_features(test_threads, test_times, get_net(pkp))
             
-            # Get features -> save as pdf
-            test_df = get_features(test_threads, test_times, get_net(pkp))
-            
+            elif research[0] == 'original':
+                # Get features -> save as pdf
+                train_df = get_og_features(train_threads, train_times, get_net(pkp))
+                
+                # Get features -> save as pdf
+                test_df = get_og_features(test_threads, test_times, get_net(pkp))
+            else:
+                print('Please select which features to use!')
+                continue
+
             # Split dataset
             X_test, X_train, Y_test, Y_train = spltdataset(train_df, test_df)
             

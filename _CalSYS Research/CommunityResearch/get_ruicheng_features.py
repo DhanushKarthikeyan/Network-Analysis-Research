@@ -50,7 +50,7 @@ def get_avgtime(times): # average time to adoption
         sum = sum + times[i+1] - times[i] 
     return round(sum.total_seconds()/(60*(len(times)-1)),2) # avg and in minutes
 
-def get_features(threads, times, network):
+def get_rc_features(threads, times, network):
     data = []
     
     global X    
