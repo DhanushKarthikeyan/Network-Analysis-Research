@@ -26,10 +26,10 @@ def find_frontiers(users, times):
     for t in range(1, len(times)):
         l = int((times[t] - times[0]).total_seconds()/60)
 
-        if l > 300:
-            #print(f'part was {t} out of {len(times)}')
+        if l > 300: # vary this value, what if it is 0 or infinite?
             part = t
             break
+
     f = users[:part]
     fn= users[part:]
     return f, fn

@@ -106,7 +106,7 @@ def get_og_features(threads, times, network):
     tmncsc = times['Neg']
 
     for key, users in csc.items():
-        print(f'Doing Forum {key}')
+        #print(f'Doing Forum {key}')
         
         f1 = round(get_f1(users),2) # neighbors
         f2 = round(get_f2(users[0]),2) # NAN root
@@ -129,7 +129,7 @@ def get_og_features(threads, times, network):
         #make_subgraph(value)
 
     for key, users in ncsc.items():
-        print(f'Doing Forum {key}')
+        #print(f'Doing Forum {key}')
         
         f1 = round(get_f1(users),2) # neighbors
         f2 = round(get_f2(users[0]),2) # NAN root
