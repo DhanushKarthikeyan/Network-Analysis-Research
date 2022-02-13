@@ -20,7 +20,6 @@ research = ['original', 'ruicheng'] # 'ruicheng'
 for forum in forums:
     for rs in research:
         acc_avg, f1_avg = [], [] # empty
-        
         for m in mult:
             print(f'Doing Forum {forum} with {m}X using {rs}')
             pkp = f'DirectedNetworks\pickleX{forum}.p'

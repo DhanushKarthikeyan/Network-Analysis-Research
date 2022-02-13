@@ -40,7 +40,7 @@ def RF_ADA(X_test, X_train, y_test, y_train, forum, m):
     recall = recall_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred)
 
-    print(f'\n RF_ADA in Forum {forum} with {m}X')
+    # print(f'\n RF_ADA in Forum {forum} with {m}X')
     #print(f"Accuracy: {round(accuracy,3)*100}% F1: {round(f1_score(y_test, y_pred),3)}")
     #print(f"The accuracy of the model is {round(accuracy,3)*100} %")
     #print(f"The recall of the model is {round(recall,3)*100} %")

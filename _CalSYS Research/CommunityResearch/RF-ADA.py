@@ -54,7 +54,7 @@ accuracy = accuracy_score(y_test, y_pred)
 recall = recall_score(y_test, y_pred)
 precision = precision_score(y_test, y_pred)
 
-print(f"The accuracy of the model is {round(accuracy,3)*100} %")
+'''print(f"The accuracy of the model is {round(accuracy,3)*100} %")
 print(f"The recall of the model is {round(recall,3)*100} %")
 print(f"The precision of the model is {round(precision,3)*100} %")
-print(f"The f1 is {round(f1_score(y_test, y_pred),3)}")
+print(f"The f1 is {round(f1_score(y_test, y_pred),3)}")'''
